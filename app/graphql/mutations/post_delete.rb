@@ -1,6 +1,6 @@
 module Mutations
-  class DeletePost < BaseMutation
-    graphql_name 'DeletePost'
+  class PostDelete < BaseMutation
+    graphql_name 'PostDelete'
 
     field :post, Types::PostType, null: true
     field :result, Boolean, null: true

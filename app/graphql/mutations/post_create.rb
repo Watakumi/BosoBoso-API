@@ -1,6 +1,6 @@
 module Mutations
-  class CreatePost < BaseMutation
-    graphql_name 'CreatePost'
+  class PostCreate < BaseMutation
+    graphql_name 'PostCreate'
 
     field :post, Types::PostType, null: true
     field :result, Boolean, null: true

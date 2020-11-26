@@ -1,6 +1,6 @@
 module Mutations
-  class UpdatePost < BaseMutation
-    graphql_name 'UpdatePost'
+  class PostUpdate < BaseMutation
+    graphql_name 'PostUpdate'
 
     field :post, Types::PostType, null: true
     field :result, Boolean, null: true
