@@ -12,12 +12,12 @@
 
 ActiveRecord::Schema.define(version: 2020_12_01_150933) do
 
-  create_table "post_times", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+  create_table "extended_times", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "post_id", null: false
-    t.integer "extended_time", null: false
+    t.integer "count", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["post_id"], name: "index_post_times_on_post_id"
+    t.index ["post_id"], name: "index_extended_times_on_post_id"
   end
 
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -27,5 +27,5 @@ ActiveRecord::Schema.define(version: 2020_12_01_150933) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "post_times", "posts"
+  add_foreign_key "extended_times", "posts"
 end

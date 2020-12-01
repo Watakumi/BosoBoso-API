@@ -1,5 +1,5 @@
 module Mutations
-  class PostTimeCreate < BaseMutation
+  class ExtendedTimeCreate < BaseMutation
     # TODO: define return fields
     # field :post, Types::PostType, null: false
 
