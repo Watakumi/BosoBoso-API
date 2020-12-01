@@ -1,3 +1,3 @@
 class Post < ApplicationRecord
-  has_many :post_times
+  has_many :extended_times
 end

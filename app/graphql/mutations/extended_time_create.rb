@@ -1,14 +1,20 @@
 module Mutations
   class ExtendedTimeCreate < BaseMutation
-    # TODO: define return fields
-    # field :post, Types::PostType, null: false
+    graphql_name 'ExtendedTimeCreate'
 
-    # TODO: define arguments
-    # argument :name, String, required: true
+    field :extended_time, Types::ExtendedTimeType, null: true
+    field :result, Boolean, null: true
 
-    # TODO: define resolve method
-    # def resolve(name:)
-    #   { post: ... }
-    # end
+    argument :count, Integer, required: true
+    argument :post_id, ID, required: true
+
+    def resolve(**args)
+      post = Post.find(args[:post_id])
+      extended_time = post.extended_times.create(count: args[:count])
+      {
+        extended_time: extended_time,
+        result: extended_time.errors.blank?
+      }
+    end
   end
 end
