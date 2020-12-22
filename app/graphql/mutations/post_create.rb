@@ -9,6 +9,7 @@ module Mutations
 
     def resolve(**args)
       post = Post.create(description: args[:description])
+      post.extended_times.create(count: 60)
       {
         post: post,
         result: post.errors.blank?
