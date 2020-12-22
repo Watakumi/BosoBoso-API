@@ -5,4 +5,8 @@ class Post < ApplicationRecord
   def sum_extended_times
     extended_times.map(&:count).sum
   end
+
+  def finished?
+    Time.now > created_at + sum_extended_times
+  end
 end

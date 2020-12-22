@@ -15,7 +15,7 @@ module Types
 
     field :posts, [Types::PostType], null: false
     def posts
-      Post.all
+      Post.all.reject{ |post| post.finished? }
     end
 
     field :post, Types::PostType, null: false do
